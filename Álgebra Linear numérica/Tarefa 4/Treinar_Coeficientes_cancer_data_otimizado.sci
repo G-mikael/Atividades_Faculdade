@@ -14,4 +14,15 @@ function [coeficientes, maiores_indices] = Treinar_Coeficientes_cancer_data_otim
     // Ajustar o modelo linear usando regressão
     [coeficientes, gauss_, perm_] = Gaussian_Elimination_4((A' * A), (A' * vetor_b));
     
+    disp(coeficientes);
+    
+    //Obtendo os n maiores indices
+    [maiores_coeficientes, indices_maiores_valores] = gsort(coeficientes, 'g', 'i');
+    maiores_indices = indices_maiores_valores(1:num_de_indices);
+    
+    //Refazendo o cálculo dos coeficientes
+    Novo_A = data(:, maiores_indices);
+    
+    [coeficientes, gauss_, perm_] = Gaussian_Elimination_4((Novo_A' * Novo_A), (Novo_A' * vetor_b));
+    
 endfunction
