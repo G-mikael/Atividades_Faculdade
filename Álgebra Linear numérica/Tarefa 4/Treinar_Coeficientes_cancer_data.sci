@@ -1,4 +1,4 @@
-function [coeficientes, maiores_indices] = Treinar_Coeficientes_cancer_data_otimizado(data, num_de_indices)
+function [coeficientes] = Treinar_Coeficientes_cancer_data(data, num_de_indices)
     // Obtendo o número de colunas da matriz de dados para a elaboração de uma matriz de coeficientes do tamanho correto
     [num_linhas, num_colunas] = size(data);
     //"num_colunas - 1" é o número de features que faremos a combinação linear com os coeficientes

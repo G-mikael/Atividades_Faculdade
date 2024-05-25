@@ -1,4 +1,4 @@
-function [Vetor_previsoes] = Fazer_Previsoes_cancer_data(coeficientes, data, indices)
+function [Vetor_previsoes] = Fazer_Previsoes_cancer_data_otimizado(coeficientes, data, indices)
     // Obtendo o número de colunas da matriz de dados para a elaboração de uma matriz de coeficientes do tamanho correto
     Vetor_y = data(:, indices) * coeficientes;
    
